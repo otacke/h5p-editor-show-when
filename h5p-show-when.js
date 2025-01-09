@@ -126,6 +126,8 @@ H5PEditor.ShowWhen = (function ($) {
     var fieldInstance = new H5PEditor.widgets[widgetName](parent, field, params, setValue);
     fieldInstance.appendTo($wrapper);
 
+    self.children = fieldInstance.children;
+    
     if (typeof fieldInstance.change === 'function') {
       self.change = function (callback) {
         fieldInstance.change(callback);
